@@ -4,8 +4,7 @@ import store from '../redux/configureStore'
 import {
     BrowserRouter as Router,
     Route,
-    Link,
-    browserHistory
+    Link, browserHistory
 } from 'react-router-dom';
 
 import Home from './Home.jsx'
