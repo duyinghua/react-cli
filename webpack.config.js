@@ -15,18 +15,18 @@ module.exports = {
     },
     //babel重要的loader在这里
     module: {
-        rules: [
-            /*{
-             test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-             loader: require.resolve('url-loader'),
-             options: {
-             limit: 10000,
-             name: 'static/media/[name].[hash:8].[ext]',
-             },
-             },*/
+        loaders: [
             {
-                test: /\.(scss|sass|less|css)$/,
-                loaders: ['style-loader', 'css-loader', 'sass-loader', 'less-loader', 'postcss-loader']
+                test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+                loader: require.resolve('url-loader'),
+                options: {
+                    limit: 10000,
+                    name: 'static/media/[name].[hash:8].[ext]',
+                },
+            },
+            {
+                test: /\.(css|scss)$/,
+                loader: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
             },
             {
                 test: /\.jsx?$/,
@@ -46,7 +46,6 @@ module.exports = {
             },
         ]
     },
-
     devtool: 'eval-source-map', //开发环境
 
     devServer: {
